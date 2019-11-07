@@ -9,6 +9,7 @@
 import Foundation
 import UserNotifications
 
+@available(iOS 10.0, *)
 extension NSObject {
     @objc func userNotificationCenter(_ center: UNUserNotificationCenter,
                                       newDidReceive response: UNNotificationResponse,

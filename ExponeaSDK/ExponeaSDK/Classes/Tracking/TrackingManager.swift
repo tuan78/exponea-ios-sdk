@@ -389,9 +389,17 @@ extension TrackingManager {
 
         // Reschedule flushing timer if using periodic flushing mode
         if case let .periodic(interval) = flushingMode {
-            flushingTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval),
-                                                 repeats: true) { _ in
-                self.flushData()
+            if #available(iOS 10.0, *) {
+                flushingTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval),
+                                                     repeats: true) { _ in
+                                                        self.flushData()
+                }
+            } else {
+                flushingTimer = Timer.scheduledTimer(timeInterval: TimeInterval(interval),
+                                                     target: self,
+                                                     selector: #selector(flushingTimerTick),
+                                                     userInfo: nil,
+                                                     repeats: true)
             }
         }
 
@@ -735,14 +743,26 @@ extension TrackingManager {
 
         case .periodic(let interval):
             // Schedule a timer for the specified interval
-            flushingTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval),
-                                                 repeats: true) { _ in
-                self.flushData()
+            if #available(iOS 10.0, *) {
+                flushingTimer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval),
+                                                     repeats: true) { _ in
+                                                        self.flushData()
+                }
+            } else {
+                Timer.scheduledTimer(timeInterval: TimeInterval(interval),
+                                     target: self,
+                                     selector: #selector(flushingTimerTick),
+                                     userInfo: nil,
+                                     repeats: true)
             }
         default:
             // No need to do anything for manual or automatic (tracked on app events) or immediate
             break
         }
+    }
+
+    @objc private func flushingTimerTick() {
+        flushData()
     }
 }
 

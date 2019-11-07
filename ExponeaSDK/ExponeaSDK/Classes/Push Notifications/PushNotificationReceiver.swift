@@ -13,6 +13,7 @@ import UserNotifications
 /// have no delegate assigned at the time when Exponea SDK is initialised and should the automatic push tracking
 /// be enabled. In it's deafult implementation it just calls the completion handler, which is the only required
 /// action that this function has to do, according to UserNotifications framework documentation.
+@available(iOS 10.0, *)
 class PushNotificationReceiver: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,

@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+@available(iOS 10.0, *)
 extension NSPersistentContainer {
 
     /// <#Description#>

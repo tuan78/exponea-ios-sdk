@@ -21,6 +21,7 @@ public struct ExponeaNotificationAction: Codable {
         url = try container.decodeIfPresent(String.self, forKey: .url)
     }
 
+    @available(iOS 10.0, *)
     public static func createNotificationAction(type: ExponeaNotificationActionType,
                                                 title: String, index: Int) -> UNNotificationAction {
         return UNNotificationAction(
