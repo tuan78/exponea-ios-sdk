@@ -67,8 +67,13 @@ struct PushNotificationParser {
         let action: ExponeaNotificationActionType
         let actionValue: String?
 
+        var actionIdentifierIsNotAsDefault = false
+        if #available(iOS 10.0, *) {
+            actionIdentifierIsNotAsDefault = (actionIdentifier ?? "") != UNNotificationDefaultActionIdentifier
+        }
+
         // If we have action identifier then a button was pressed
-        if let identifier = actionIdentifier, identifier != UNNotificationDefaultActionIdentifier {
+        if let identifier = actionIdentifier, actionIdentifierIsNotAsDefault {
             // Fetch action (only a value if a custom button was pressed)
             // Format of action id should look like - EXPONEA_APP_OPEN_ACTION_0
             // We need to get the right index and fetch the correct action url from payload, if any

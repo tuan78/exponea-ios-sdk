@@ -11,15 +11,17 @@ import CoreData
 
 /// The Database Manager class is responsible for persist the data using CoreData Framework.
 /// Persisted data will be used to interact with the Exponea API.
+
+
 class DatabaseManager {
 
-    internal let persistentContainer: NSPersistentContainer
-
     /// Managed Context for Core Data
-    private var context: NSManagedObjectContext {
-        return persistentContainer.viewContext
-    }
+    private var context: NSManagedObjectContext
 
+    /// Temporarily store persistentContainer for iOS 10+
+    internal var persistentContainer: Any?
+
+    @available(iOS 10.0, *)
     internal init(persistentStoreDescriptions: [NSPersistentStoreDescription]? = nil) throws {
         let bundle = Bundle(for: DatabaseManager.self)
         guard let container = NSPersistentContainer(name: "DatabaseModel", bundle: bundle) else {
@@ -45,9 +47,66 @@ class DatabaseManager {
         // Set the container
         persistentContainer = container
 
+        // Set context
+        context = container.viewContext
+
         // Initialise customer
         _ = customer
         Exponea.logger.log(.verbose, message: "Database initialised with customer:\n\(customer)")
+    }
+
+    @available(iOS, deprecated: 10.0, message:"Use init(persistentStoreDescriptions:)")
+    internal init() throws {
+        context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+
+        let bundle = Bundle(for: DatabaseManager.self)
+        let objectModel = try initObjectModel(name: "DatabaseModel",
+                                              bundle: bundle)
+
+        let coordinator = try initPersistentStoreCoordinator(databaseName: "ExponeaDatabase",
+                                                             objectModel: objectModel)
+
+        context.persistentStoreCoordinator = coordinator
+
+        // Initialise customer
+        _ = customer
+        Exponea.logger.log(.verbose, message: "Database initialised with customer:\n\(customer)")
+    }
+
+}
+
+// MARK: - Init object model and persistent store coordinator for pre iOS 10
+
+extension DatabaseManager {
+    private func initObjectModel(name: String, bundle: Bundle) throws -> NSManagedObjectModel {
+        guard let modelURL = bundle.url(forResource: name, withExtension: "momd"),
+            let objectModel = NSManagedObjectModel(contentsOf: modelURL) else {
+                throw DatabaseManagerError.unableToCreatePersistentContainer
+        }
+        return objectModel
+    }
+
+    private func initPersistentStoreCoordinator(databaseName: String, objectModel: NSManagedObjectModel) throws -> NSPersistentStoreCoordinator {
+
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: objectModel)
+        let options: [AnyHashable: Any] = [
+            NSMigratePersistentStoresAutomaticallyOption: true,
+            NSInferMappingModelAutomaticallyOption: true
+        ]
+
+        let documentsDirectoryURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let url = documentsDirectoryURL.appendingPathComponent("\(databaseName).sqlite")
+
+        do {
+            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
+                                               configurationName: nil,
+                                               at: url,
+                                               options: options)
+        } catch {
+            throw DatabaseManagerError.unableToLoadPeristentStore(error.localizedDescription)
+        }
+
+        return coordinator
     }
 }
 
@@ -374,24 +433,33 @@ extension DatabaseManager: DatabaseManagerType {
         }
     }
 
+
     public func clear() throws {
-        // Delete all persistent stores
-        let coordinator = persistentContainer.persistentStoreCoordinator
-        for store in coordinator.persistentStores {
-            // Make sure we have URL and it is a NSSQLiteStoreType
-            guard let url = store.url, store.type == NSSQLiteStoreType else { continue }
-            try coordinator.destroyPersistentStore(at: url, ofType: NSSQLiteStoreType, options: nil)
-        }
+        if #available(iOS 10, *) {
+            guard let `persistentContainer` = persistentContainer as? NSPersistentContainer else {
+                throw DatabaseManagerError.unknownError("Persistent container is nil")
+            }
 
-        // Load new persistent store
-        var loadError: Error?
-        persistentContainer.loadPersistentStores(completionHandler: { loadError = $1 })
+            // Delete all persistent stores
+            let coordinator = persistentContainer.persistentStoreCoordinator
+            for store in coordinator.persistentStores {
+                // Make sure we have URL and it is a NSSQLiteStoreType
+                guard let url = store.url, store.type == NSSQLiteStoreType else { continue }
+                try coordinator.destroyPersistentStore(at: url, ofType: NSSQLiteStoreType, options: nil)
+            }
 
-        // Throw an error if we failed at loading a persistent store
-        if let loadError = loadError {
-            let error = DatabaseManagerError.unableToLoadPeristentStore(loadError.localizedDescription)
-            Exponea.logger.log(.error, message: error.localizedDescription)
-            throw error
+            // Load new persistent store
+            var loadError: Error?
+            persistentContainer.loadPersistentStores(completionHandler: { loadError = $1 })
+
+            // Throw an error if we failed at loading a persistent store
+            if let loadError = loadError {
+                let error = DatabaseManagerError.unableToLoadPeristentStore(loadError.localizedDescription)
+                Exponea.logger.log(.error, message: error.localizedDescription)
+                throw error
+            }
+        } else {
+            // TODO: for iOS 9
         }
     }
 }
