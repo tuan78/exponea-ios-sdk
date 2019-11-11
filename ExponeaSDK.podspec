@@ -15,7 +15,8 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "ExponeaSDK"
+  s.name         = "CustomExponeaSDK"
+  s.module_name  = 'CustomExponeaSDK'
   s.version      = "2.4.0"
   s.summary      = "Exponea SDK used to track and fetch data from Exponea Experience Cloud."
 
@@ -58,7 +59,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios, "10.3"
+  s.platform     = :ios, "9.0"
   s.swift_version = '4.2.0'
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

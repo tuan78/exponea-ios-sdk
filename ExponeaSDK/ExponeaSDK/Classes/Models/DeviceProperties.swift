@@ -23,7 +23,7 @@ struct DeviceProperties {
 
     /// SDK Versioning
     public var sdkVersion: String = {
-        let bundle = Bundle(for: ExponeaSDK.Exponea.self)
+        let bundle = Bundle(for: Exponea.self)
         let version = bundle.infoDictionary?["CFBundleShortVersionString"] as? String
         return version ?? "Unknown version"
     }()

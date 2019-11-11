@@ -44,7 +44,7 @@
 		05AA63CB2343805C00D78452 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 05AA63CA2343805C00D78452 /* .swiftlint.yml */; };
 		05B78B1E2355CAFA0055077A /* NSManagedObjectWithContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B78B1D2355CAFA0055077A /* NSManagedObjectWithContext.swift */; };
 		05BB22B2236B1E0C0098C406 /* ExponeaNotificationServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB22B1236B1E0C0098C406 /* ExponeaNotificationServiceSpec.swift */; };
-		05BB22B3236B1F740098C406 /* ExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */; };
+		05BB22B3236B1F740098C406 /* CustomExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */; };
 		05BB22B5236B2F780098C406 /* PushNotificationManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB22B4236B2F780098C406 /* PushNotificationManagerSpec.swift */; };
 		05BB22B7236B300F0098C406 /* MockTrackingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BB22B6236B300F0098C406 /* MockTrackingManager.swift */; };
 		05E1A3812359B3A500E5EDDE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 05E1A3802359B3A500E5EDDE /* .swiftlint.yml */; };
@@ -69,7 +69,7 @@
 		C02C562221C9B01D0087A990 /* ExponeaNotificationActionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B23D721AAFDBB00360EE6 /* ExponeaNotificationActionType.swift */; };
 		C02C562321C9B4640087A990 /* ExponeaNotificationContentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08D53C721B946E700EA2C13 /* ExponeaNotificationContentService.swift */; };
 		C02C562421C9B4E20087A990 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08D53CE21B9474E00EA2C13 /* UserNotifications.framework */; };
-		C02C562521C9B4E90087A990 /* ExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */; };
+		C02C562521C9B4E90087A990 /* CustomExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */; };
 		C02C562921C9B71D0087A990 /* ExponeaNotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C562821C9B71D0087A990 /* ExponeaNotificationAction.swift */; };
 		C02C562A21C9B71D0087A990 /* ExponeaNotificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02C562821C9B71D0087A990 /* ExponeaNotificationAction.swift */; };
 		C030AF48216F4335004413F0 /* PushNotificationReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C030AF47216F4335004413F0 /* PushNotificationReceiver.swift */; };
@@ -95,8 +95,8 @@
 		C07E421420CA8C1B00920809 /* BannerFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07E421320CA8C1B00920809 /* BannerFrequency.swift */; };
 		C07E421620CA8D1800920809 /* BannerTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07E421520CA8D1800920809 /* BannerTrigger.swift */; };
 		C07F1BC7209A474A004FE933 /* EntityValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07F1BC6209A474A004FE933 /* EntityValueResponse.swift */; };
-		C0843CF120B6E7C900FAF0CB /* ExponeaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F021E859206CF10200788ABC /* ExponeaSDK.framework */; };
-		C0843CF220B6E7C900FAF0CB /* ExponeaSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F021E859206CF10200788ABC /* ExponeaSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C0843CF120B6E7C900FAF0CB /* CustomExponeaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F021E859206CF10200788ABC /* CustomExponeaSDK.framework */; };
+		C0843CF220B6E7C900FAF0CB /* CustomExponeaSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F021E859206CF10200788ABC /* CustomExponeaSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C084D0EB2181C5EA005C0CA8 /* MockUserNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084D0EA2181C5EA005C0CA8 /* MockUserNotificationCenter.swift */; };
 		C08D53CF21B9474E00EA2C13 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08D53CE21B9474E00EA2C13 /* UserNotifications.framework */; };
 		C08D53D121B9474E00EA2C13 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08D53D021B9474E00EA2C13 /* UserNotificationsUI.framework */; };
@@ -130,10 +130,10 @@
 		C0ED33A621A6FA31003649C3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ED33A521A6FA31003649C3 /* NotificationService.swift */; };
 		C0ED33AA21A6FA31003649C3 /* ExampleNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C0ED33A321A6FA31003649C3 /* ExampleNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C0ED33B821A6FB10003649C3 /* ExponeaSDKNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = C0ED33B621A6FB10003649C3 /* ExponeaSDKNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0ED33BB21A6FB10003649C3 /* ExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */; };
-		C0ED33BC21A6FB10003649C3 /* ExponeaSDKNotifications.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C0ED33BB21A6FB10003649C3 /* CustomExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */; };
+		C0ED33BC21A6FB10003649C3 /* CustomExponeaSDKNotifications.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C0ED33C121A6FB6B003649C3 /* ExponeaNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ED33C021A6FB6B003649C3 /* ExponeaNotificationService.swift */; };
-		C0ED33C221A72E40003649C3 /* ExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */; };
+		C0ED33C221A72E40003649C3 /* CustomExponeaSDKNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */; };
 		C0F2406A20BC38EC00CAF7CE /* Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F2406920BC38EC00CAF7CE /* Swizzle.swift */; };
 		C0F2406C20BC50A000CAF7CE /* Exponea+Fetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F2406B20BC50A000CAF7CE /* Exponea+Fetching.swift */; };
 		C0F2406E20BC511500CAF7CE /* Exponea+Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F2406D20BC511500CAF7CE /* Exponea+Tracking.swift */; };
@@ -148,7 +148,7 @@
 		C0F7A59D21AE921300BA392F /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F7A59C21AE921300BA392F /* NotificationData.swift */; };
 		D20134EC7D150032774DF78D /* Pods_ExponeaSDKTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 080033AD83490110B7A029BD /* Pods_ExponeaSDKTests.framework */; };
 		F01ADE622084D58600E20662 /* DevicePropertiesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01ADE612084D58600E20662 /* DevicePropertiesSpec.swift */; };
-		F021E863206CF10200788ABC /* ExponeaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F021E859206CF10200788ABC /* ExponeaSDK.framework */; };
+		F021E863206CF10200788ABC /* CustomExponeaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F021E859206CF10200788ABC /* CustomExponeaSDK.framework */; };
 		F021E86A206CF10200788ABC /* ExponeaSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = F021E85C206CF10200788ABC /* ExponeaSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F029BF21208A089C00342498 /* EventsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029BF20208A089C00342498 /* EventsResponse.swift */; };
 		F029BF23208A08CE00342498 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F029BF22208A08CE00342498 /* Event.swift */; };
@@ -259,8 +259,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C0843CF220B6E7C900FAF0CB /* ExponeaSDK.framework in Embed Frameworks */,
-				C0ED33BC21A6FB10003649C3 /* ExponeaSDKNotifications.framework in Embed Frameworks */,
+				C0843CF220B6E7C900FAF0CB /* CustomExponeaSDK.framework in Embed Frameworks */,
+				C0ED33BC21A6FB10003649C3 /* CustomExponeaSDKNotifications.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +405,7 @@
 		C0ED33A321A6FA31003649C3 /* ExampleNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ExampleNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0ED33A521A6FA31003649C3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C0ED33A721A6FA31003649C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExponeaSDKNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CustomExponeaSDKNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0ED33B621A6FB10003649C3 /* ExponeaSDKNotifications.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExponeaSDKNotifications.h; sourceTree = "<group>"; };
 		C0ED33B721A6FB10003649C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0ED33C021A6FB6B003649C3 /* ExponeaNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExponeaNotificationService.swift; sourceTree = "<group>"; };
@@ -426,10 +426,10 @@
 		C0F7A59C21AE921300BA392F /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 		E60F84DD39D938AAB043ED11 /* Pods_ExponeaSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExponeaSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01ADE612084D58600E20662 /* DevicePropertiesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePropertiesSpec.swift; sourceTree = "<group>"; };
-		F021E859206CF10200788ABC /* ExponeaSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ExponeaSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F021E859206CF10200788ABC /* CustomExponeaSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CustomExponeaSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F021E85C206CF10200788ABC /* ExponeaSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExponeaSDK.h; sourceTree = "<group>"; };
 		F021E85D206CF10200788ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F021E862206CF10200788ABC /* ExponeaSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExponeaSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F021E862206CF10200788ABC /* CustomExponeaSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomExponeaSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F021E869206CF10200788ABC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F029BF20208A089C00342498 /* EventsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsResponse.swift; sourceTree = "<group>"; };
 		F029BF22208A08CE00342498 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -486,7 +486,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C02C562521C9B4E90087A990 /* ExponeaSDKNotifications.framework in Frameworks */,
+				C02C562521C9B4E90087A990 /* CustomExponeaSDKNotifications.framework in Frameworks */,
 				C08D53D121B9474E00EA2C13 /* UserNotificationsUI.framework in Frameworks */,
 				C08D53CF21B9474E00EA2C13 /* UserNotifications.framework in Frameworks */,
 			);
@@ -497,7 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02C562421C9B4E20087A990 /* UserNotifications.framework in Frameworks */,
-				C0ED33C221A72E40003649C3 /* ExponeaSDKNotifications.framework in Frameworks */,
+				C0ED33C221A72E40003649C3 /* CustomExponeaSDKNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,8 +512,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0843CF120B6E7C900FAF0CB /* ExponeaSDK.framework in Frameworks */,
-				C0ED33BB21A6FB10003649C3 /* ExponeaSDKNotifications.framework in Frameworks */,
+				C0843CF120B6E7C900FAF0CB /* CustomExponeaSDK.framework in Frameworks */,
+				C0ED33BB21A6FB10003649C3 /* CustomExponeaSDKNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,8 +528,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05BB22B3236B1F740098C406 /* ExponeaSDKNotifications.framework in Frameworks */,
-				F021E863206CF10200788ABC /* ExponeaSDK.framework in Frameworks */,
+				05BB22B3236B1F740098C406 /* CustomExponeaSDKNotifications.framework in Frameworks */,
+				F021E863206CF10200788ABC /* CustomExponeaSDK.framework in Frameworks */,
 				D20134EC7D150032774DF78D /* Pods_ExponeaSDKTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -951,11 +951,11 @@
 		F021E85A206CF10200788ABC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F021E859206CF10200788ABC /* ExponeaSDK.framework */,
-				F021E862206CF10200788ABC /* ExponeaSDKTests.xctest */,
+				F021E859206CF10200788ABC /* CustomExponeaSDK.framework */,
+				F021E862206CF10200788ABC /* CustomExponeaSDKTests.xctest */,
 				C0F6C4E02098A1AB00834E21 /* Example.app */,
 				C0ED33A321A6FA31003649C3 /* ExampleNotificationService.appex */,
-				C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */,
+				C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */,
 				C08D53CD21B9474E00EA2C13 /* ExampleNotificationContent.appex */,
 			);
 			name = Products;
@@ -1230,9 +1230,9 @@
 			productReference = C0ED33A321A6FA31003649C3 /* ExampleNotificationService.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		C0ED33B321A6FB0F003649C3 /* ExponeaSDKNotifications */ = {
+		C0ED33B321A6FB0F003649C3 /* CustomExponeaSDKNotifications */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C0ED33BD21A6FB10003649C3 /* Build configuration list for PBXNativeTarget "ExponeaSDKNotifications" */;
+			buildConfigurationList = C0ED33BD21A6FB10003649C3 /* Build configuration list for PBXNativeTarget "CustomExponeaSDKNotifications" */;
 			buildPhases = (
 				C0ED33AF21A6FB0F003649C3 /* Headers */,
 				C0ED33B021A6FB0F003649C3 /* Sources */,
@@ -1243,9 +1243,9 @@
 			);
 			dependencies = (
 			);
-			name = ExponeaSDKNotifications;
+			name = CustomExponeaSDKNotifications;
 			productName = "ExponeaSDK-Notifications";
-			productReference = C0ED33B421A6FB0F003649C3 /* ExponeaSDKNotifications.framework */;
+			productReference = C0ED33B421A6FB0F003649C3 /* CustomExponeaSDKNotifications.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		C0F6C4DF2098A1AB00834E21 /* Example */ = {
@@ -1271,9 +1271,9 @@
 			productReference = C0F6C4E02098A1AB00834E21 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F021E858206CF10200788ABC /* ExponeaSDK */ = {
+		F021E858206CF10200788ABC /* CustomExponeaSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F021E86D206CF10200788ABC /* Build configuration list for PBXNativeTarget "ExponeaSDK" */;
+			buildConfigurationList = F021E86D206CF10200788ABC /* Build configuration list for PBXNativeTarget "CustomExponeaSDK" */;
 			buildPhases = (
 				F021E854206CF10200788ABC /* Sources */,
 				F021E855206CF10200788ABC /* Frameworks */,
@@ -1285,14 +1285,14 @@
 			);
 			dependencies = (
 			);
-			name = ExponeaSDK;
+			name = CustomExponeaSDK;
 			productName = ExponeaSDK;
-			productReference = F021E859206CF10200788ABC /* ExponeaSDK.framework */;
+			productReference = F021E859206CF10200788ABC /* CustomExponeaSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F021E861206CF10200788ABC /* ExponeaSDKTests */ = {
+		F021E861206CF10200788ABC /* CustomExponeaSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F021E870206CF10200788ABC /* Build configuration list for PBXNativeTarget "ExponeaSDKTests" */;
+			buildConfigurationList = F021E870206CF10200788ABC /* Build configuration list for PBXNativeTarget "CustomExponeaSDKTests" */;
 			buildPhases = (
 				66B6C7F3C0CC28444D9F6CED /* [CP] Check Pods Manifest.lock */,
 				F021E85E206CF10200788ABC /* Sources */,
@@ -1305,9 +1305,9 @@
 			dependencies = (
 				C0861C0220F919CF00C57997 /* PBXTargetDependency */,
 			);
-			name = ExponeaSDKTests;
+			name = CustomExponeaSDKTests;
 			productName = ExponeaSDKTests;
-			productReference = F021E862206CF10200788ABC /* ExponeaSDKTests.xctest */;
+			productReference = F021E862206CF10200788ABC /* CustomExponeaSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1368,7 +1368,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F021E853206CF10200788ABC /* Build configuration list for PBXProject "ExponeaSDK" */;
+			buildConfigurationList = F021E853206CF10200788ABC /* Build configuration list for PBXProject "CustomExponeaSDK" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1381,9 +1381,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F021E858206CF10200788ABC /* ExponeaSDK */,
-				C0ED33B321A6FB0F003649C3 /* ExponeaSDKNotifications */,
-				F021E861206CF10200788ABC /* ExponeaSDKTests */,
+				F021E858206CF10200788ABC /* CustomExponeaSDK */,
+				C0ED33B321A6FB0F003649C3 /* CustomExponeaSDKNotifications */,
+				F021E861206CF10200788ABC /* CustomExponeaSDKTests */,
 				C0F6C4DF2098A1AB00834E21 /* Example */,
 				C0ED33A221A6FA31003649C3 /* ExampleNotificationService */,
 				C08D53CC21B9474E00EA2C13 /* ExampleNotificationContent */,
@@ -1720,17 +1720,17 @@
 /* Begin PBXTargetDependency section */
 		C02C562721C9B4F20087A990 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0ED33B321A6FB0F003649C3 /* ExponeaSDKNotifications */;
+			target = C0ED33B321A6FB0F003649C3 /* CustomExponeaSDKNotifications */;
 			targetProxy = C02C562621C9B4F20087A990 /* PBXContainerItemProxy */;
 		};
 		C0753E9420A5793200A779FF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F021E858206CF10200788ABC /* ExponeaSDK */;
+			target = F021E858206CF10200788ABC /* CustomExponeaSDK */;
 			targetProxy = C0753E9320A5793200A779FF /* PBXContainerItemProxy */;
 		};
 		C0861C0220F919CF00C57997 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F021E858206CF10200788ABC /* ExponeaSDK */;
+			target = F021E858206CF10200788ABC /* CustomExponeaSDK */;
 			targetProxy = C0861C0120F919CF00C57997 /* PBXContainerItemProxy */;
 		};
 		C08D53DA21B9474E00EA2C13 /* PBXTargetDependency */ = {
@@ -1745,12 +1745,12 @@
 		};
 		C0ED33BA21A6FB10003649C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0ED33B321A6FB0F003649C3 /* ExponeaSDKNotifications */;
+			target = C0ED33B321A6FB0F003649C3 /* CustomExponeaSDKNotifications */;
 			targetProxy = C0ED33B921A6FB10003649C3 /* PBXContainerItemProxy */;
 		};
 		C0ED33C421A72E48003649C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C0ED33B321A6FB0F003649C3 /* ExponeaSDKNotifications */;
+			target = C0ED33B321A6FB0F003649C3 /* CustomExponeaSDKNotifications */;
 			targetProxy = C0ED33C321A72E48003649C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1890,7 +1890,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.exponea.ExponeaSDKNotifications;
-				PRODUCT_NAME = ExponeaSDKNotifications;
+				PRODUCT_NAME = CustomExponeaSDKNotifications;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1919,7 +1919,7 @@
 				MARKETING_VERSION = 2.2.0;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.exponea.ExponeaSDKNotifications;
-				PRODUCT_NAME = ExponeaSDKNotifications;
+				PRODUCT_NAME = CustomExponeaSDKNotifications;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -2201,7 +2201,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C0ED33BD21A6FB10003649C3 /* Build configuration list for PBXNativeTarget "ExponeaSDKNotifications" */ = {
+		C0ED33BD21A6FB10003649C3 /* Build configuration list for PBXNativeTarget "CustomExponeaSDKNotifications" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C0ED33BE21A6FB10003649C3 /* Debug */,
@@ -2219,7 +2219,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F021E853206CF10200788ABC /* Build configuration list for PBXProject "ExponeaSDK" */ = {
+		F021E853206CF10200788ABC /* Build configuration list for PBXProject "CustomExponeaSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F021E86B206CF10200788ABC /* Debug */,
@@ -2228,7 +2228,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F021E86D206CF10200788ABC /* Build configuration list for PBXNativeTarget "ExponeaSDK" */ = {
+		F021E86D206CF10200788ABC /* Build configuration list for PBXNativeTarget "CustomExponeaSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F021E86E206CF10200788ABC /* Debug */,
@@ -2237,7 +2237,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F021E870206CF10200788ABC /* Build configuration list for PBXNativeTarget "ExponeaSDKTests" */ = {
+		F021E870206CF10200788ABC /* Build configuration list for PBXNativeTarget "CustomExponeaSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F021E871206CF10200788ABC /* Debug */,

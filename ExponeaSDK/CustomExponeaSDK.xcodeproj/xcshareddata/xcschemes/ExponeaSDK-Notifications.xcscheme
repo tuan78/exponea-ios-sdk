@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C0ED33B321A6FB0F003649C3"
                BuildableName = "ExponeaSDKNotifications.framework"
-               BlueprintName = "ExponeaSDKNotifications"
-               ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+               BlueprintName = "CustomExponeaSDKNotifications"
+               ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,8 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -47,12 +45,10 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C0ED33B321A6FB0F003649C3"
             BuildableName = "ExponeaSDKNotifications.framework"
-            BlueprintName = "ExponeaSDKNotifications"
-            ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+            BlueprintName = "CustomExponeaSDKNotifications"
+            ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -65,8 +61,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C0ED33B321A6FB0F003649C3"
             BuildableName = "ExponeaSDKNotifications.framework"
-            BlueprintName = "ExponeaSDKNotifications"
-            ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+            BlueprintName = "CustomExponeaSDKNotifications"
+            ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F021E858206CF10200788ABC"
-               BuildableName = "ExponeaSDK.framework"
-               BlueprintName = "ExponeaSDK"
-               ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+               BuildableName = "CustomExponeaSDK.framework"
+               BlueprintName = "CustomExponeaSDK"
+               ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,16 +26,22 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "NO"
       codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES"
-      shouldUseLaunchSchemeArgsEnv = "NO">
+      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-com.apple.CoreData.ConcurrencyDebug 1"
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F021E858206CF10200788ABC"
-            BuildableName = "ExponeaSDK.framework"
-            BlueprintName = "ExponeaSDK"
-            ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+            BuildableName = "CustomExponeaSDK.framework"
+            BlueprintName = "CustomExponeaSDK"
+            ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -44,29 +50,12 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F021E861206CF10200788ABC"
-               BuildableName = "ExponeaSDKTests.xctest"
-               BlueprintName = "ExponeaSDKTests"
-               ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+               BuildableName = "CustomExponeaSDKTests.xctest"
+               BlueprintName = "CustomExponeaSDKTests"
+               ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C0F6C4DF2098A1AB00834E21"
-            BuildableName = "Example.app"
-            BlueprintName = "Example"
-            ReferencedContainer = "container:ExponeaSDK.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "-com.apple.CoreData.ConcurrencyDebug 1"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -82,13 +71,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F021E858206CF10200788ABC"
-            BuildableName = "ExponeaSDK.framework"
-            BlueprintName = "ExponeaSDK"
-            ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+            BuildableName = "CustomExponeaSDK.framework"
+            BlueprintName = "CustomExponeaSDK"
+            ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -100,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F021E858206CF10200788ABC"
-            BuildableName = "ExponeaSDK.framework"
-            BlueprintName = "ExponeaSDK"
-            ReferencedContainer = "container:ExponeaSDK.xcodeproj">
+            BuildableName = "CustomExponeaSDK.framework"
+            BlueprintName = "CustomExponeaSDK"
+            ReferencedContainer = "container:CustomExponeaSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
