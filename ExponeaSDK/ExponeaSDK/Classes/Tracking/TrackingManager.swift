@@ -749,11 +749,11 @@ extension TrackingManager {
                                                         self.flushData()
                 }
             } else {
-                Timer.scheduledTimer(timeInterval: TimeInterval(interval),
-                                     target: self,
-                                     selector: #selector(flushingTimerTick),
-                                     userInfo: nil,
-                                     repeats: true)
+                flushingTimer = Timer.scheduledTimer(timeInterval: TimeInterval(interval),
+                                                     target: self,
+                                                     selector: #selector(flushingTimerTick),
+                                                     userInfo: nil,
+                                                     repeats: true)
             }
         default:
             // No need to do anything for manual or automatic (tracked on app events) or immediate
