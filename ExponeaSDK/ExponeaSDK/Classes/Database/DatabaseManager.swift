@@ -21,8 +21,10 @@ class DatabaseManager {
     /// Temporarily store persistentContainer for iOS 10+
     internal var persistentContainer: Any?
 
+    private static let databaseName = "ExponeaDatabase"
+
     @available(iOS 10.0, *)
-    internal init(persistentStoreDescriptions: [NSPersistentStoreDescription]? = nil) throws {
+    internal init(persistentStoreDescriptions: [NSPersistentStoreDescription]?) throws {
         let bundle = Bundle(for: DatabaseManager.self)
         guard let container = NSPersistentContainer(name: "DatabaseModel", bundle: bundle) else {
             throw DatabaseManagerError.unableToCreatePersistentContainer
@@ -57,13 +59,13 @@ class DatabaseManager {
 
     @available(iOS, deprecated: 10.0, message:"Use init(persistentStoreDescriptions:)")
     internal init() throws {
-        context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+        context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
 
         let bundle = Bundle(for: DatabaseManager.self)
         let objectModel = try initObjectModel(name: "DatabaseModel",
                                               bundle: bundle)
 
-        let coordinator = try initPersistentStoreCoordinator(databaseName: "ExponeaDatabase",
+        let coordinator = try initPersistentStoreCoordinator(databaseName: DatabaseManager.databaseName,
                                                              objectModel: objectModel)
 
         context.persistentStoreCoordinator = coordinator
@@ -86,6 +88,13 @@ extension DatabaseManager {
         return objectModel
     }
 
+    private func getPersistentStoreURL(databaseName: String) -> URL {
+        let documentsDirectoryURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        let url = documentsDirectoryURL.appendingPathComponent("\(databaseName).sqlite")
+
+        return url
+    }
+
     private func initPersistentStoreCoordinator(databaseName: String, objectModel: NSManagedObjectModel) throws -> NSPersistentStoreCoordinator {
 
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: objectModel)
@@ -93,9 +102,7 @@ extension DatabaseManager {
             NSMigratePersistentStoresAutomaticallyOption: true,
             NSInferMappingModelAutomaticallyOption: true
         ]
-
-        let documentsDirectoryURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        let url = documentsDirectoryURL.appendingPathComponent("\(databaseName).sqlite")
+        let url = getPersistentStoreURL(databaseName: databaseName)
 
         do {
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType,
@@ -459,7 +466,17 @@ extension DatabaseManager: DatabaseManagerType {
                 throw error
             }
         } else {
-            // TODO: for iOS 9
+            let url = getPersistentStoreURL(databaseName: DatabaseManager.databaseName)
+            let coordinator = context.persistentStoreCoordinator
+            try coordinator?.destroyPersistentStore(at: url,
+                                                   ofType: NSSQLiteStoreType,
+                                                   options: nil)
+
+            // Load new persistent store
+            let bundle = Bundle(for: DatabaseManager.self)
+            let model = try initObjectModel(name: "DatabaseModel", bundle: bundle)
+            let newCoordinator = try initPersistentStoreCoordinator(databaseName: DatabaseManager.databaseName, objectModel: model)
+            context.persistentStoreCoordinator = newCoordinator
         }
     }
 }

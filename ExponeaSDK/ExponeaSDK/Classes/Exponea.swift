@@ -125,7 +125,12 @@ public class Exponea: ExponeaType {
         let exception = objc_tryCatch {
             do {
                 // Create database
-                let database = try DatabaseManager()
+                let database: DatabaseManagerType
+                if #available(iOS 10.0, *) {
+                    database = try DatabaseManager(persistentStoreDescriptions: nil)
+                } else {
+                    database = try DatabaseManager()
+                }
 
                 // Recreate repository
                 let repository = ServerRepository(configuration: configuration)
