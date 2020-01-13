@@ -115,7 +115,8 @@ class PushNotificationManager: NSObject, PushNotificationManagerType {
                     }
 
                     // Validate this is a valid URL, prevents NSUserActivity crash with invalid URL
-                    // only http/https is allowed https://developer.apple.com/documentation/foundation/nsuseractivity/1418086-webpageurl
+                    // only http/https is allowed
+                    // https://developer.apple.com/documentation/foundation/nsuseractivity/1418086-webpageurl
                     // eg. MYDEEPLINK::HOME:SCREEN:1, exponea://deeplink
                     guard url.absoluteString.isValidURL, url.scheme == "http" || url.scheme == "https" else {
                         openDeeplink()
@@ -216,7 +217,11 @@ class PushNotificationManager: NSObject, PushNotificationManagerType {
                    customEventType != Constants.EventTypes.pushDelivered {
                     try trackingManager?.track(
                         .customEvent,
-                        with: [.eventType(customEventType), .properties(properties), .timestamp(notification.timestamp.timeIntervalSince1970)]
+                        with: [
+                            .eventType(customEventType),
+                            .properties(properties),
+                            .timestamp(notification.timestamp.timeIntervalSince1970)
+                        ]
                     )
                 } else {
                     try trackingManager?.track(

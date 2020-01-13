@@ -284,7 +284,10 @@ extension DatabaseManager: DatabaseManagerType {
                 }
             }
 
-            Exponea.logger.log(.verbose, message: "Adding track event \(trackEvent.eventType ?? "nil") to database: \(trackEvent.objectID)")
+            Exponea.logger.log(
+                .verbose,
+                message: "Adding track event \(trackEvent.eventType ?? "nil") to database: \(trackEvent.objectID)"
+            )
 
             // Insert the object into the database
             context.insert(trackEvent)
